@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const SignUp = () => {
-const {createUser} = useContext(AuthContext);
+    const { createUser, updateUserData } = useContext(AuthContext);
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -16,6 +16,7 @@ const {createUser} = useContext(AuthContext);
         createUser(email,password)
          .then(result=>{
             const user = result.user;
+             updateUserData(user,name)
             console.log(user)
          })
          .then(error=> console.error(error))
