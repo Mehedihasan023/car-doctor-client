@@ -7,7 +7,8 @@ const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => {
+             })
             .catch(error => console.log(error))
     }
     const navItems = <>
@@ -15,7 +16,7 @@ const NavBar = () => {
         <li><Link to='/about'>About</Link></li>
         {user?.email ? <>
             <li><Link to='/bookings'>My Bookings</Link></li>
-            <li><Link onClick={handleLogOut} to='/'>Log out</Link></li></>
+            <li><Link onClick={handleLogOut}>Log out</Link></li></>
             : <li><Link to='/login'>Login</Link></li>
         }
     </>
